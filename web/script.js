@@ -300,9 +300,9 @@ function openModal(code, data) {
 
 // Função para classificar o infectado com base em atributos
 function classifyInfected(infected) {
-  let strength = 5;
-  let speed = 5;
-  let intelligence = 5;
+  let strength = 30;
+  let speed = 30;
+  let intelligence = 30;
 
   if (infected.age <= 17) {
     speed += 15;
