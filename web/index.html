@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://coderchallenge.dsin.com.br/wp-content/uploads/2023/09/favicon.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      href="https://coderchallenge.dsin.com.br/wp-content/uploads/2023/09/favicon.png"
+      sizes="192x192"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <title>Desafio - CODER</title>
+  </head>
+  <body>
+    <!-- MAIN -->
+    <div class="container-main">
+      <nav>
+        <ul>
+          <li id="form">Formulário</li>
+          <li id="attributes">Atributos</li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- FORMULÁRIO -->
+    <form class="container-form" style="display: none">
+      <div class="form-group name">
+        <label for="name">Nome</label>
+        <input type="text" id="name" placeholder="Seu Nome" />
+      </div>
+
+      <div class="form-group age">
+        <label for="age">Idade</label>
+        <input
+          type="number"
+          id="age"
+          placeholder="Sua Idade"
+          min="1"
+          max="200"
+        />
+      </div>
+
+      <div class="error-message" id="ageErrorMessage"></div>
+
+      <div class="form-group gender">
+        <label for="gender">Gênero</label>
+        <select id="gender">
+          <option value="" selected disabled>Selecione o seu sexo</option>
+          <option value="Male">Masculino</option>
+          <option value="Female">Feminino</option>
+          <option value="Other">Prefiro não dizer</option>
+        </select>
+      </div>
+
+      <div class="form-group blood">
+        <label for="blood">Tipo sanguíneo</label>
+        <select id="blood">
+          <option value="" selected disabled>
+            Selecione seu tipo sanguíneo
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group music">
+        <label for="music">Gênero Musical</label>
+        <select id="music">
+          <option value="" selected disabled>
+            Selecione seu gênero musical
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group sport">
+        <label for="sport">Esporte Preferido</label>
+        <select id="sport">
+          <option value="" selected disabled>
+            Selecione seu esporte preferido
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group game">
+        <label for="game">Jogo Preferido</label>
+        <select id="game">
+          <option value="" selected disabled>
+            Selecione seu jogo preferido
+          </option>
+        </select>
+      </div>
+
+      <div class="form-btn" id="send-form">
+        <button class="send-form" type="button">Enviar</button>
+      </div>
+    </form>
+
+    <!-- Validar código -->
+    <div class="container-code" style="display: none">
+      <div id="code-verification">
+        <form id="code-form" action="#">
+          <h4 class="title">Digite seu código</h4>
+          <div class="input-field">
+            <input id="code-input" type="number" />
+          </div>
+          <div class="form-group code-btn">
+            <input id="verify-code" type="submit" value="Enviar" />
+          </div>
+          <div id="error-message" class="error-message" style="display: none">
+            Código não encontrado ou ocorreu um erro.
+          </div>
+          <div
+            id="success-message"
+            class="success-message"
+            style="display: none"
+          >
+            Código encontrado com sucesso!
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Parte de habilidades -->
+    <div class="container-skills" style="display: none">
+      <h4 class="title">Infectado: <b id="infected-name">Joãozinho</b></h4>
+      <div class="skill-box">
+        <span class="title">Força</span>
+        <div class="skill-bar">
+          <span class="skill-per strength">
+            <span class="tooltip" id="strength">40%</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="skill-box">
+        <span class="title">Velocidade</span>
+        <div class="skill-bar">
+          <span class="skill-per speed">
+            <span class="tooltip" id="speed">40%</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="skill-box">
+        <span class="title">Inteligência</span>
+        <div class="skill-bar">
+          <span class="skill-per intelligence">
+            <span class="tooltip" id="intelligence">40%</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Parte de notificação -->
+    <section class="container-notify" style="display: none">
+      <div class="modal-box">
+        <i id="icon-notify" class="fa-regular fa-circle-check"></i>
+        <h2>Sucesso</h2>
+        <h3>
+          Você completou o formulário e agora seu código está disponível para
+          consulta!
+        </h3>
+        <h3 class="code-area"><b>CÓDIGO: </b><span id="code"></span></h3>
+
+        <div class="buttons">
+          <button class="close-btn">Confirmar</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
